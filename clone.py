@@ -11,3 +11,9 @@ hands = mp_hands.Hands(max_num_hands=2)
 
 cap = cv2.VideoCapture(0)
 
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+
+cv2.namedWindow("Mirror Humanoid Clone", cv2.WINDOW_NORMAL)
+cv2.setWindowProperty("Mirror Humanoid Clone", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
