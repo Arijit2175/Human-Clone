@@ -65,3 +65,16 @@ def draw_limb(img, p1, p2, color, thickness):
     cv2.circle(img, p1, thickness//2, color, -1, cv2.LINE_AA)
     cv2.circle(img, p2, thickness//2, color, -1, cv2.LINE_AA)
 
+def draw_hand(img, pts):
+    connections = mp_hands.HAND_CONNECTIONS
+
+    for a, b in connections:
+        cv2.line(img, pts[a], pts[b], HAND_COLOR, 16, cv2.LINE_AA)
+    for p in pts:
+        cv2.circle(img, p, 10, HAND_COLOR, -1, cv2.LINE_AA)
+
+    for a, b in connections:
+        cv2.line(img, pts[a], pts[b], HAND_COLOR, 8, cv2.LINE_AA)
+    for p in pts:
+        cv2.circle(img, p, 5, HAND_COLOR, -1, cv2.LINE_AA)
+
