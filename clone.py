@@ -60,3 +60,8 @@ def extract_hand_points(results, w, h):
             hands_pts.append(pts)
     return hands_pts
 
+def draw_limb(img, p1, p2, color, thickness):
+    cv2.line(img, p1, p2, color, thickness, cv2.LINE_AA)
+    cv2.circle(img, p1, thickness//2, color, -1, cv2.LINE_AA)
+    cv2.circle(img, p2, thickness//2, color, -1, cv2.LINE_AA)
+
