@@ -27,13 +27,13 @@ It tracks your body and hands using your webcam and draws a stylized humanoid fi
 
 | Technology | Version |
 |------------|---------|
-| Python     | 3.9 or 3.10 |
+| Python     | 3.9 or 3.11 |
 | OpenCV     | 4.8.0.76 |
 | MediaPipe  | 0.10.9 |
 | NumPy      | 1.24.4 |
 
-> ⚠️ MediaPipe is NOT stable on Python 3.11+.  
-> Use Python 3.9 or 3.10 to avoid installation and runtime issues.
+> ⚠️ MediaPipe is NOT stable on Python 3.12+.  
+> Use Python 3.9 or 3.11 to avoid installation and runtime issues.
 
 ---
 
