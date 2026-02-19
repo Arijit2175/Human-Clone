@@ -37,6 +37,15 @@ It tracks your body and hands using your webcam and draws a stylized humanoid fi
 
 ---
 
+## 📁 Project Structure
+
+```
+clone.py
+README.md
+```
+
+---
+
 ## 📦 Installation and Execution
 
 ### 1. Create Virtual Environment (Recommended)
