@@ -37,3 +37,28 @@ It tracks your body and hands using your webcam and draws a stylized humanoid fi
 
 ---
 
+## 📦 Installation and Execution
+
+### 1. Create Virtual Environment (Recommended)
+
+```
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 2. Install Dependencies
+
+```
+pip install opencv-python==4.8.0.76 mediapipe==0.10.9 numpy==1.24.4
+```
+
+### ▶️ Run the Project
+
+```
+python clone.py
+```
+
+Press ESC to exit.
+
+---
+
