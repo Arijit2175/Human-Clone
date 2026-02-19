@@ -23,3 +23,7 @@ smoothed_pts = None
 X_OFFSET = 250
 Y_OFFSET = -60
 
+BODY_COLOR = (139, 0, 0)    
+HAND_COLOR = (0, 140, 255)  
+HEAD_COLOR = (0, 0, 255)     
+
