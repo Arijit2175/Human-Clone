@@ -20,3 +20,6 @@ cv2.setWindowProperty("Mirror Humanoid Clone", cv2.WND_PROP_FULLSCREEN, cv2.WIND
 alpha = 0.7      
 smoothed_pts = None 
 
+X_OFFSET = 250
+Y_OFFSET = -60
+
