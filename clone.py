@@ -48,3 +48,15 @@ def extract_pose_points(results, w, h):
             pts[i] = (x, y)
     return pts
 
+def extract_hand_points(results, w, h):
+    hands_pts = []
+    if results.multi_hand_landmarks:
+        for hand in results.multi_hand_landmarks:
+            pts = []
+            for lm in hand.landmark:
+                x = int((1 - lm.x) * w) + X_OFFSET
+                y = int(lm.y * h) + Y_OFFSET
+                pts.append((x, y))
+            hands_pts.append(pts)
+    return hands_pts
+
