@@ -117,3 +117,28 @@ def draw_humanoid(img, pts, hands_pts):
     for hand in hands_pts:
         draw_hand(img, hand)
 
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    frame = cv2.flip(frame, 1)
+    h, w, _ = frame.shape
+
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+    pose_results = pose.process(rgb)
+    hand_results = hands.process(rgb)
+
+    pts = extract_pose_points(pose_results, w, h)
+    hands_pts = extract_hand_points(hand_results, w, h)
+
+    smoothed_pts = smooth_points(smoothed_pts, pts)
+
+    draw_humanoid(frame, smoothed_pts, hands_pts)
+
+    cv2.imshow("Mirror Humanoid Clone", frame)
+
+    if cv2.waitKey(1) & 0xFF == 27:
+        break
+
