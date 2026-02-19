@@ -62,3 +62,12 @@ Press ESC to exit.
 
 ---
 
+## 🧠 How It Works
+
+- MediaPipe Pose tracks body landmarks.
+- MediaPipe Hands tracks finger joints.
+- Coordinates are flipped horizontally for mirror effect.
+- A humanoid stickman is drawn using OpenCV primitives.
+- A smoothing filter blends frames to reduce jitter.
+- Hands are drawn thicker for a glowing effect.
+
