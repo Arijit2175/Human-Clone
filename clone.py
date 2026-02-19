@@ -39,3 +39,12 @@ def smooth_points(old, new):
         out[k] = (int(sx), int(sy))
     return out
 
+def extract_pose_points(results, w, h):
+    pts = {}
+    if results.pose_landmarks:
+        for i, lm in enumerate(results.pose_landmarks.landmark):
+            x = int((1 - lm.x) * w) + X_OFFSET
+            y = int(lm.y * h) + Y_OFFSET
+            pts[i] = (x, y)
+    return pts
+
