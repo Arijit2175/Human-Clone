@@ -89,3 +89,25 @@ Press ESC to exit.
 
 ---
 
+## 📚 References
+
+- MediaPipe Pose Documentation  
+  https://developers.google.com/mediapipe/solutions/vision/pose
+
+- MediaPipe Hands Documentation  
+  https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
+
+- OpenCV Python Documentation  
+  https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+
+- NumPy Documentation  
+  https://numpy.org/doc/
+
+- Python Official Documentation  
+  https://docs.python.org/3/
+
+- Real-Time Pose Tracking Paper  
+  Lugaresi et al., "MediaPipe: A Framework for Building Perception Pipelines", Google AI, 2019.
+
+<br>
+
