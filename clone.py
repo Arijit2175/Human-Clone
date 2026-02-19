@@ -78,3 +78,42 @@ def draw_hand(img, pts):
     for p in pts:
         cv2.circle(img, p, 5, HAND_COLOR, -1, cv2.LINE_AA)
 
+def draw_humanoid(img, pts, hands_pts):
+    if not pts:
+        return
+
+    P = mp_pose.PoseLandmark
+
+    limbs = [
+        (P.LEFT_SHOULDER.value, P.LEFT_ELBOW.value),
+        (P.LEFT_ELBOW.value, P.LEFT_WRIST.value),
+        (P.RIGHT_SHOULDER.value, P.RIGHT_ELBOW.value),
+        (P.RIGHT_ELBOW.value, P.RIGHT_WRIST.value),
+        (P.LEFT_HIP.value, P.LEFT_KNEE.value),
+        (P.LEFT_KNEE.value, P.LEFT_ANKLE.value),
+        (P.RIGHT_HIP.value, P.RIGHT_KNEE.value),
+        (P.RIGHT_KNEE.value, P.RIGHT_ANKLE.value),
+    ]
+
+    for a, b in limbs:
+        if a in pts and b in pts:
+            draw_limb(img, pts[a], pts[b], BODY_COLOR, 20)
+
+    if all(k in pts for k in [
+        P.LEFT_SHOULDER.value, P.RIGHT_SHOULDER.value,
+        P.LEFT_HIP.value, P.RIGHT_HIP.value
+    ]):
+        torso = np.array([
+            pts[P.LEFT_SHOULDER.value],
+            pts[P.RIGHT_SHOULDER.value],
+            pts[P.RIGHT_HIP.value],
+            pts[P.LEFT_HIP.value]
+        ])
+        cv2.fillPoly(img, [torso], BODY_COLOR)
+
+    if P.NOSE.value in pts:
+        cv2.circle(img, pts[P.NOSE.value], 90, HEAD_COLOR, -1, cv2.LINE_AA)
+
+    for hand in hands_pts:
+        draw_hand(img, hand)
+
