@@ -71,3 +71,12 @@ Press ESC to exit.
 - A smoothing filter blends frames to reduce jitter.
 - Hands are drawn thicker for a glowing effect.
 
+---
+
+## 🖥️ Output
+
+- Fullscreen webcam window
+- Clone appears beside you
+
+---
+
