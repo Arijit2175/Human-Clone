@@ -27,3 +27,15 @@ BODY_COLOR = (139, 0, 0)
 HAND_COLOR = (0, 140, 255)  
 HEAD_COLOR = (0, 0, 255)     
 
+def smooth_points(old, new):
+    if old is None:
+        return new
+    out = {}
+    for k in new:
+        ox, oy = old.get(k, new[k])
+        nx, ny = new[k]
+        sx = ox * alpha + nx * (1 - alpha)
+        sy = oy * alpha + ny * (1 - alpha)
+        out[k] = (int(sx), int(sy))
+    return out
+
